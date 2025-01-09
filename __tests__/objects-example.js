@@ -1,6 +1,7 @@
 const customer = {
     name: 'Jesus Virgen',
-    balance: 500
+    balance: 500,
+    type: 'Premium'
 };
 
 describe('Customer testing', () => {
@@ -8,7 +9,7 @@ describe('Customer testing', () => {
         expect( customer.balance ).toBeGreaterThan(400);
     });
     test('When customer is Jesus Virgen', () => {
-        expect(customer.name).toBe('Jesus Virgen');
+        expect(customer).toMatchSnapshot();
     });
     test('Is not another customer', () => {
         expect(customer.name).not.toBe('Jose');
